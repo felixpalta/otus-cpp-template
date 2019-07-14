@@ -13,7 +13,7 @@ message("Version ${PROJECT_VERSION_MAJOR} ${PROJECT_VERSION_MINOR} ${PROJECT_VER
 
 include(CMakeLists-GTest.cmake)
 
-configure_file(version.h.in version.hpp @ONLY)
+# configure_file(version.h.in version.hpp @ONLY)
 
 add_executable(MUH_PROJECT "main.cpp")
 add_library(MUH_PROJECT_lib "lib.cpp")
@@ -24,9 +24,9 @@ set_target_properties(MUH_PROJECT MUH_PROJECT_lib tests_default PROPERTIES
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
 )
-target_include_directories(MUH_PROJECT_lib PRIVATE
-    "${CMAKE_BINARY_DIR}"
-)
+# target_include_directories(MUH_PROJECT_lib PRIVATE
+    # "${CMAKE_BINARY_DIR}"
+# )
 target_link_libraries(MUH_PROJECT PRIVATE
     MUH_PROJECT_lib
 )
