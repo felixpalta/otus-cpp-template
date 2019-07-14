@@ -22,15 +22,15 @@ add_executable(tests_default tests_default.cpp)
 set_target_properties(MUH_PROJECT MUH_PROJECT_lib tests_default PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
-     CXX_EXTENSIONS OFF
+    CXX_EXTENSIONS OFF
 )
-target_include_directories(MUH_PROJECT_lib
-    PRIVATE "${CMAKE_BINARY_DIR}"
+target_include_directories(MUH_PROJECT_lib PRIVATE
+    "${CMAKE_BINARY_DIR}"
 )
 target_link_libraries(MUH_PROJECT PRIVATE
     MUH_PROJECT_lib
 )
-target_link_libraries(tests_default 
+target_link_libraries(tests_default PRIVATE
     gtest_main
     MUH_PROJECT_lib
 )
@@ -44,10 +44,10 @@ if (MSVC)
     )
 else ()
     target_compile_options(MUH_PROJECT PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic
     )
     target_compile_options(MUH_PROJECT_lib PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic
     )
 endif()
 
