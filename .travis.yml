@@ -1,3 +1,4 @@
+dist: xenial
 language: cpp
 before_script:
 - echo "Run before_script"
