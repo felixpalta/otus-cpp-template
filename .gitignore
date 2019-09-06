@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/c++,cmake,linux,qtcreator
 # Edit at https://www.gitignore.io/?templates=c++,cmake,linux,qtcreator
 
+.gitignore
 
 build/
 
